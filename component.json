@@ -1,0 +1,12 @@
+{
+  "name": "angular-route",
+  "description": "angular componentizd!",
+  "version": "",
+  "keywords": [],
+  "dependencies": {},
+  "scripts": [
+    "build/angular-route.js",
+    "index.js"
+  ],
+  "styles": []
+}
