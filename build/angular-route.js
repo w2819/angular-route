@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.2.0-bae284a
+ * @license AngularJS v1.2.0-6802c3a
  * (c) 2010-2012 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -835,10 +835,10 @@ function ngViewFactory(   $route,   $anchorScroll,   $compile,   $controller,   
           if (template) {
             var newScope = scope.$new();
             linker(newScope, function(clone) {
-              cleanupLastView();
-
               clone.html(template);
-              $animate.enter(clone, null, $element);
+              $animate.enter(clone, null, currentElement || $element);
+
+              cleanupLastView();
 
               var link = $compile(clone.contents()),
                   current = $route.current;
