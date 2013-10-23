@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.2.0-d5965d1
+ * @license AngularJS v1.2.0-df86a1d
  * (c) 2010-2012 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -16,6 +16,7 @@
  *
  * {@installModule route}
  *
+ * <div doc-module-components="ngRoute"></div>
  */
  /* global -ngRouteModule */
 var ngRouteModule = angular.module('ngRoute', ['ng']).
