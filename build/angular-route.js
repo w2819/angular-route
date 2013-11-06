@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.2.0-1af8f60
+ * @license AngularJS v1.2.0-c85f51d
  * (c) 2010-2012 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -813,6 +813,7 @@ function ngViewFactory(   $route,   $anchorScroll,   $compile,   $controller,   
       return function(scope, $element, attr) {
         var currentScope,
             currentElement,
+            autoScrollExp = attr.autoscroll,
             onloadExp = attr.onload || '';
 
         scope.$on('$routeChangeSuccess', update);
@@ -837,7 +838,12 @@ function ngViewFactory(   $route,   $anchorScroll,   $compile,   $controller,   
             var newScope = scope.$new();
             linker(newScope, function(clone) {
               clone.html(template);
-              $animate.enter(clone, null, currentElement || $element);
+              $animate.enter(clone, null, currentElement || $element, function onNgViewEnter () {
+                if (angular.isDefined(autoScrollExp)
+                  && (!autoScrollExp || scope.$eval(autoScrollExp))) {
+                  $anchorScroll();
+                }
+              });
 
               cleanupLastView();
 
@@ -860,9 +866,6 @@ function ngViewFactory(   $route,   $anchorScroll,   $compile,   $controller,   
               link(currentScope);
               currentScope.$emit('$viewContentLoaded');
               currentScope.$eval(onloadExp);
-
-              // $anchorScroll might listen on event...
-              $anchorScroll();
             });
           } else {
             cleanupLastView();
