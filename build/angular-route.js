@@ -1,6 +1,6 @@
 /**
- * @license AngularJS v1.2.3-a17f546
- * (c) 2010-2012 Google, Inc. http://angularjs.org
+ * @license AngularJS v1.2.3-e9ded8d
+ * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
 (function(window, angular, undefined) {'use strict';
