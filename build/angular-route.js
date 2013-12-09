@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.2.5-36204f9
+ * @license AngularJS v1.2.5-ae8f6e6
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -60,8 +60,8 @@ function $RouteProvider(){
    *      * `path` can contain named groups starting with a colon: e.g. `:name`. All characters up
    *        to the next slash are matched and stored in `$routeParams` under the given `name`
    *        when the route matches.
-   *      * `path` can contain named groups starting with a colon and ending with a star: e.g.`:name*`.
-   *        All characters are eagerly stored in `$routeParams` under the given `name`
+   *      * `path` can contain named groups starting with a colon and ending with a star:
+   *        e.g.`:name*`. All characters are eagerly stored in `$routeParams` under the given `name`
    *        when the route matches.
    *      * `path` can contain optional named groups with a question mark: e.g.`:name?`.
    *
